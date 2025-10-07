@@ -54,7 +54,7 @@
 //	return 0;
 //}
 
-void PrintHelloWorld()
+/*void PrintHelloWorld()
 {
 	std::cout << "Hello world\n";
 }
@@ -133,7 +133,6 @@ void ReturnCal()
 	
 }
 
-
 void setArray1(int array[], int size);
 
 void setArray2(int array[], int size);
@@ -142,23 +141,92 @@ void PrintArray1(int array[], int size);
 
 void PrintArray2(int array[], int size);
 
+void SwitchArray(int array1[], int array2[], int size);*/
 
-void SwitchArray(int array1[], int array2[], int size);
+//double Sum(double a, double b)
+//{
+//	return a + b;
+//}
+//int Sum(int a, int b)
+//{
+//	return a + b;
+//}
 
 
+/*void setArray(int array[], int size);
+void setArray(char array[], int size);
+void setArray(bool array[], int size);
+
+void printMas(int arr1[], int size);
+void printMas(char arr2[], int size);
+void printMas(bool arr2[], int size);*/
+
+template<typename Type> 
+Type Sum(Type a, Type b)
+{
+	return a + b;
+}
+
+int Fak(int N)
+{
+	if (N < 0)
+	{
+		return 0;
+	}
+	if (N == 0)
+	{
+		return 1;
+	}
+	else
+	{
+		return N * Fak(N - 1);
+	}
+}
+int recursiveDivision(int dividend, int divisor)
+{
+	return (dividend < divisor) ? 0 : (1 + recursiveDivision(dividend - divisor, divisor));
+}
+
+int recursiveUmnoj(int a, int b)
+{
+	return (b == 0) ? 0 : (a + recursiveUmnoj(a, b - 1));
+}
 
 int main()
 {
 	setlocale(LC_ALL, "ru");
 	srand(time(NULL)); // rand
+
+	std::cout << Sum(4, 5);
+	std::cout << "\n";
+	std::cout << Fak(5);
+	std::cout << "\n";
+
+	std::cout << recursiveDivision(25, 5);
+	std::cout << "\n";
+	std::cout << recursiveUmnoj(3, 5);
+
+	/*const int size = 4;
+	int arr1[size]{};
+	char arr2[size]{};
+	bool arr3[size]{};
+
+	setArray(arr1, size);
+	setArray(arr2, size);
+	setArray(arr3, size);
+
+	printMas(arr1,size);
+	printMas(arr2, size);
+	printMas(arr3, size);
 	
-	/*PrintHelloWorld();
+
+	PrintHelloWorld();
 	int a = 100;
 	int number = 100;
 	PrintNumber(a);
 	number = ReturnNumber(number);
 	std::cout << number;*/
-
+	
 	/*for (int i = 0; i < 5; i++)
 	{
 		std::cout << i;
@@ -396,7 +464,7 @@ int main()
 /*ReturnCal();
 */
 
-const int size = 6;
+/*const int size = 6;
 int arr1[size];
 int arr2[size];
 int temp = 0;
@@ -457,4 +525,63 @@ void SwitchArray(int array1[], int array2[], int size)
 		array1[i] = array2[i];
 		array2[i] = temp;
 	}
+	*/
+return 0;
 }
+/*
+void setArray(int array[], int size)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		array[i] = rand() % 10 + 1;
+	}
+}
+void setArray(char array[], int size)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		array[i] = 'a' + rand() % 26 ;
+	}
+}
+void setArray(bool array[], int size)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		array[i] = rand() % 10;
+	}
+}
+void printMas(int arr1[], int size)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		
+		std::cout << arr1[i] << " ";
+	}
+	std::cout << "\n";
+}
+void printMas(char arr2[], int size)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		
+		std::cout << arr2[i] << " ";
+	}
+	std::cout << "\n";
+}
+void printMas(bool arr3[], int size)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+	
+		if (arr3[i] > 0.5)
+		{
+			std::cout << arr3[i] << " ";
+		}
+		else
+		{
+			std::cout << arr3[i] << " ";
+		}
+	}
+	std::cout << "\n";
+}
+*/
