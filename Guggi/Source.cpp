@@ -161,7 +161,7 @@ void printMas(int arr1[], int size);
 void printMas(char arr2[], int size);
 void printMas(bool arr2[], int size);*/
 
-template<typename Type> 
+/*template<typename Type>
 Type Sum(Type a, Type b)
 {
 	return a + b;
@@ -190,21 +190,190 @@ int recursiveDivision(int dividend, int divisor)
 int recursiveUmnoj(int a, int b)
 {
 	return (b == 0) ? 0 : (a + recursiveUmnoj(a, b - 1));
+}*/
+
+
+
+int cate()
+{
+	int categ;
+	std::cout << "Введите категорию: (1.Фруктовый, 2. Овощной, 3. Чаи.) "; std::cin >> categ;
+	return categ;
 }
 
-int main()
+double cat1(std::string arr1[])
+{
+	int sok, double korz = 0;
+	for (size_t i = 0; i < 4; i++)
+	{
+		std::cout << arr1[i] << " ";
+	}
+	std::cout << "\n";
+	for (char vse; vse == 'n' || vse == 'N';)
+	{
+		std::cout << "Какой хочешь брад: (1-|140|,2-|270|,3-|140|,4-|180|) ";
+		std::cin >> sok;
+		if (sok == 1)
+		{
+			korz += 140;
+			std::cout << "В корзине на сумму: " << korz << "\n";
+		}
+		else if (sok == 2)
+		{
+			korz += 270;
+			std::cout << "В корзине на сумму: " << korz << "\n";
+		}
+		else if (sok == 3)
+		{
+			korz += 140;
+			std::cout << "В корзине на сумму: " << korz << "\n";
+		}
+		else if (sok == 4)
+		{
+			korz += 180;
+			std::cout << "В корзине на сумму: " << korz << "\n";
+		}
+		else
+		{
+			std::cout << "Некорректный ввод!!!!!!! " << "\n";
+		}
+		std::cout << "Все? (y,n)";
+		std::cin >> vse;
+	}
+
+	return korz;
+}
+double cat2(std::string arr2[])
+{
+	int sok, double korz;
+
+	for (size_t i = 0; i < 3; i++)
+	{
+		std::cout << arr2[i] << " ";
+	}
+	std::cout << "\n";
+	for (char vse; vse == 'n' || vse == 'N';)
+	{
+		std::cout << "Какой хочешь брад: (1-|140|,2-|200|,3-|255|) ";
+		std::cin >> sok;
+		if (sok == 1)
+		{
+			korz += 140;
+			std::cout << "В корзине на сумму: " << korz << "\n";
+		}
+		else if (sok == 2)
+		{
+			korz += 200;
+			std::cout << "В корзине на сумму: " << korz << "\n";
+		}
+		else if (sok == 3)
+		{
+			korz += 255;
+			std::cout << "В корзине на сумму: " << korz << "\n";
+		}
+		else
+		{
+			std::cout << "Некорректный ввод!!!!!!! " << "\n";
+		}
+		std::cout << "Все? (y,n)";
+		std::cin >> vse;
+	}
+
+	return korz;
+}
+void cat3(int sok, int korz, int sum, char vse, std::string arr3[])
+{
+	for (size_t i = 0; i < 2; i++)
+	{
+		std::cout << arr3[i] << " ";
+	}
+	for (size_t i = 0; vse == 'n' || vse == 'N'; i++)
+	{
+		std::cout << "Какой хочешь брад: (1-|190|,2-|230|) ";
+		std::cin >> sok;
+		if (sok == 1)
+		{
+			korz += 190;
+			std::cout << "В корзине на сумму: " << korz << "\n";
+		}
+		else if (sok == 2)
+		{
+			korz += 230;
+			std::cout << "В корзине на сумму: " << korz << "\n";
+		}
+
+		else
+		{
+			std::cout << "Некорректный ввод!!!!!!! " << "\n";
+		}
+		std::cout << "Все? (y,n)";
+		std::cin >> vse;
+	}
+}
+
+void niaM()
 {
 	setlocale(LC_ALL, "ru");
 	srand(time(NULL)); // rand
 
-	std::cout << Sum(4, 5);
+
+	int categ = 0;
+	char vse = 'n';
+	double totalSum = 0;
+	char end = 'y';
+
+	std::string arr1[]{ "Яблочный,", "Апельсиновый,","Абрикосовый,","Грушевый" };
+	std::string arr2[]{ "Томатный,", "Луковый,","Огуречный," };
+	std::string arr3[]{ "Чесночный", "Петрушевый" };
+
+	
+	
+	for (size_t i = 0; end == 'y' || end == 'Y'; i++)
+	{
+		categ = cate();
+
+		if (categ == 1)
+		{
+			totalSum += cat1(arr1);
+
+		}
+		else if (categ == 2)
+		{
+			totalSum +=  cat2(arr2);
+
+		}
+		else if (categ == 3)
+		{
+			totalSum += cat3(arr3);
+		}
+		else
+		{
+			std::cout << "Не корректный ввод!!!" << '\n';
+		}
+		std::cout << "Хотите выбрать еще категорию?(y/n) "; 
+		std::cin >> end;
+	}
+
+	
+}	
+
+
+int main()
+{
+	niaM();
+
+
+
+	
+
+	/*std::cout << Sum(4, 5);
 	std::cout << "\n";
 	std::cout << Fak(5);
 	std::cout << "\n";
 
 	std::cout << recursiveDivision(25, 5);
 	std::cout << "\n";
-	std::cout << recursiveUmnoj(3, 5);
+	std::cout << recursiveUmnoj(3, 5);*/
 
 	/*const int size = 4;
 	int arr1[size]{};
