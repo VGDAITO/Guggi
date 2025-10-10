@@ -194,210 +194,15 @@ int recursiveUmnoj(int a, int b)
 
 
 
-int cate()
-{
-	int categ;
-	std::cout << "Введите категорию: (1.Фруктовый, 2. Овощной, 3. Чаи.) "; std::cin >> categ;
-	return categ;
-}
+int cate();
 
-double cat1(std::string arr1[])
-{
-	int sok;
-	double korz = 0;
-	char vse = 'n';
-	for (size_t i = 0; i < 4; i++)
-	{
-		std::cout << arr1[i] << " ";
-	}
-	std::cout << "\n";
-	while(vse == 'n' || vse == 'N')
-	{
-		std::cout << "Какой хочешь брад: (1-|140|,2-|270|,3-|140|,4-|180|) ";
-		std::cin >> sok;
-		if (sok == 1)
-		{
-			korz += 140;
-			std::cout << "В корзине на сумму: " << korz << "\n";
-		}
-		else if (sok == 2)
-		{
-			korz += 270;
-			std::cout << "В корзине на сумму: " << korz << "\n";
-		}
-		else if (sok == 3)
-		{
-			korz += 140;
-			std::cout << "В корзине на сумму: " << korz << "\n";
-		}
-		else if (sok == 4)
-		{
-			korz += 180;
-			std::cout << "В корзине на сумму: " << korz << "\n";
-		}
-		else
-		{
-			std::cout << "Некорректный ввод!!!!!!! " << "\n";
-			continue;
-		}
-		std::cout << "Все? (y,n) ";
-		std::cin >> vse;
-	}
+double cat1(std::string arr1[]);
 
-	return korz;
-}
-double cat2(std::string arr2[])
-{
-	int sok;
-	double korz = 0;
-	char vse = 'n';
-	int countLuk = 0;
-	double sumLuk = 0;
+double cat2(std::string arr2[]);
+double cat3(std::string arr3[]);
 
-	for (size_t i = 0; i < 3; i++)
-	{
-		std::cout << arr2[i] << " ";
-	}
-	std::cout << "\n";
-	while (vse == 'n' || vse == 'N')
-	{
-		std::cout << "Какой хочешь брад: (1-|140|,2-|200|,3-|255|) ";
-		std::cin >> sok;
-		if (sok == 1)
-		{
-			korz += 140;
-			std::cout << "В корзине на сумму: " << korz << "\n";
-		}
-		else if (sok == 2)
-		{
-			korz += 200;
-			countLuk += 1;
-			std::cout << "В корзине на сумму: " << korz << "\n";
-						
-			if (countLuk % 4 == 0)
-			{
-				korz -= 200;
-				std::cout << "Бесплатный " << countLuk / 4 << " литр лукового сока" <<  "\n";
-			}
-			
-		}
-		else if (sok == 3)
-		{
-			korz += 255;
-			std::cout << "В корзине на сумму: " << korz << "\n";
-		}
-		else
-		{
-			std::cout << "Некорректный ввод!!!!!!! " << "\n";
-			continue;
-		}
-		std::cout << "Все? (y,n) ";
-		std::cin >> vse;
-	}
+void niaM();
 
-	return korz;
-}
-double cat3(std::string arr3[])
-{
-	int sok;
-	double korz = 0;
-	char vse = 'n';
-	int countPetr = 0;
-	double sumPetr = 0;
-
-	for (size_t i = 0; i < 2; i++)
-	{
-		std::cout << arr3[i] << " ";
-	}
-	while (vse == 'n' || vse == 'N')
-	{
-		std::cout << "Какой хочешь брад: (1-|190|,2-|230|) ";
-		std::cin >> sok;
-		if (sok == 1)
-		{
-			korz += 190;
-			std::cout << "В корзине на сумму: " << korz << "\n";
-		}
-		else if (sok == 2)
-		{
-			korz += 230;
-			countPetr += 1;
-			sumPetr = countPetr * 230;
-			std::cout << "В корзине на сумму: " << korz << "\n";
-			
-			if (countPetr >= 3)
-			{
-				double disPetr = sumPetr * 0.05;
-				std::cout << "Скидка 5% на петрушевый чай: -" << disPetr << "\n";
-				korz -= disPetr;
-			}
-		}
-
-		else
-		{
-			std::cout << "Некорректный ввод!!!!!!! " << "\n";
-			continue;
-		}
-		std::cout << "Все? (y,n): ";
-		std::cin >> vse;
-	}
-	return korz;
-}
-
-void niaM()
-{
-	setlocale(LC_ALL, "ru");
-	srand(time(NULL)); // rand
-
-
-	int categ = 0;
-	char vse = 'n';
-	double totalSum = 0;
-	char end = 'y';
-	double allDisk = 0;
-
-	std::string arr1[]{ "Яблочный,", "Апельсиновый,","Абрикосовый,","Грушевый" };
-	std::string arr2[]{ "Томатный,", "Луковый,","Огуречный," };
-	std::string arr3[]{ "Чесночный", "Петрушевый" };
-
-	
-	
-	while (end == 'y' || end == 'Y')
-	{
-		categ = cate();
-
-		if (categ == 1)
-		{
-			totalSum += cat1(arr1);
-
-		}
-		else if (categ == 2)
-		{
-			totalSum +=  cat2(arr2);
-
-		}
-		else if (categ == 3)
-		{
-			totalSum += cat3(arr3);
-		}
-		else
-		{
-			std::cout << "Не корректный ввод!!!" << '\n';
-			continue;
-		}
-
-		std::cout << "Текущая сумма всех покупок: " << totalSum << " руб.\n";
-		std::cout << "Хотите выбрать еще категорию?(y/n) "; 
-		std::cin >> end;
-	}
-	if (totalSum > 750)
-	{
-		allDisk = totalSum * 0.13;
-		std::cout << "Скидка 13% на весь чек: -" << allDisk <<  "руб. \n";
-		totalSum -= allDisk;
-	}
-	std::cout << "Итоговая сумма после всех скидок: " << totalSum << "руб. \n";
-}	
 
 
 int main()
@@ -796,3 +601,215 @@ void printMas(bool arr3[], int size)
 	std::cout << "\n";
 }
 */
+int cate()
+{
+	int categ;
+	std::cout << "Введите категорию: (1.Фруктовый, 2. Овощной, 3. Чаи.) "; std::cin >> categ;
+	return categ;
+}
+double cat1(std::string arr1[])
+{
+	int sok;
+	double korz = 0;
+	char vse = 'n';
+	for (size_t i = 0; i < 4; i++)
+	{
+		std::cout << arr1[i] << " ";
+	}
+	std::cout << "\n";
+	while (vse == 'n' || vse == 'N')
+	{
+		std::cout << "Какой хочешь брад: (1-|140|,2-|270|,3-|140|,4-|180|) ";
+		std::cin >> sok;
+		if (sok == 1)
+		{
+			korz += 140;
+			std::cout << "В корзине на сумму: " << korz << "\n";
+		}
+		else if (sok == 2)
+		{
+			korz += 270;
+			std::cout << "В корзине на сумму: " << korz << "\n";
+		}
+		else if (sok == 3)
+		{
+			korz += 140;
+			std::cout << "В корзине на сумму: " << korz << "\n";
+		}
+		else if (sok == 4)
+		{
+			korz += 180;
+			std::cout << "В корзине на сумму: " << korz << "\n";
+		}
+		else
+		{
+			std::cout << "Некорректный ввод!!!!!!! " << "\n";
+			continue;
+		}
+		std::cout << "Все? (y,n) ";
+		std::cin >> vse;
+	}
+
+	return korz;
+}
+double cat2(std::string arr2[])
+{
+	int sok;
+	double korz = 0;
+	char vse = 'n';
+	int countLuk = 0;
+	double sumLuk = 0;
+
+	for (size_t i = 0; i < 3; i++)
+	{
+		std::cout << arr2[i] << " ";
+	}
+	std::cout << "\n";
+	while (vse == 'n' || vse == 'N')
+	{
+		std::cout << "Какой хочешь брад: (1-|140|,2-|200|,3-|255|) ";
+		std::cin >> sok;
+		if (sok == 1)
+		{
+			korz += 140;
+			std::cout << "В корзине на сумму: " << korz << "\n";
+		}
+		else if (sok == 2)
+		{
+			korz += 200;
+			countLuk += 1;
+			std::cout << "В корзине на сумму: " << korz << "\n";
+
+			if (countLuk % 4 == 0)
+			{
+				korz -= 200;
+				std::cout << "Бесплатный " << countLuk / 4 << " литр лукового сока" << "\n";
+			}
+
+		}
+		else if (sok == 3)
+		{
+			korz += 255;
+			std::cout << "В корзине на сумму: " << korz << "\n";
+		}
+		else
+		{
+			std::cout << "Некорректный ввод!!!!!!! " << "\n";
+			continue;
+		}
+		std::cout << "Все? (y,n) ";
+		std::cin >> vse;
+	}
+
+	return korz;
+}
+double cat3(std::string arr3[])
+{
+	int sok;
+	double korz = 0;
+	char vse = 'n';
+	int countPetr = 0;
+	double sumPetr = 0;
+
+	for (size_t i = 0; i < 2; i++)
+	{
+		std::cout << arr3[i] << " ";
+	}
+	while (vse == 'n' || vse == 'N')
+	{
+		std::cout << "Какой хочешь брад: (1-|190|,2-|230|) ";
+		std::cin >> sok;
+		if (sok == 1)
+		{
+			korz += 190;
+			std::cout << "В корзине на сумму: " << korz << "\n";
+		}
+		else if (sok == 2)
+		{
+			korz += 230;
+			countPetr += 1;
+			sumPetr = countPetr * 230;
+			std::cout << "В корзине на сумму: " << korz << "\n";
+
+			if (countPetr >= 3)
+			{
+				double disPetr = sumPetr * 0.05;
+				std::cout << "Скидка 5% на петрушевый чай: -" << disPetr << "\n";
+				korz -= disPetr;
+			}
+		}
+
+		else
+		{
+			std::cout << "Некорректный ввод!!!!!!! " << "\n";
+			continue;
+		}
+		std::cout << "Все? (y,n): ";
+		std::cin >> vse;
+	}
+	return korz;
+}
+void niaM()
+{
+	setlocale(LC_ALL, "ru");
+	srand(time(NULL)); // rand
+
+
+	int categ = 0;
+	char vse = 'n';
+	double totalSum = 0;
+	char end = 'y';
+	double allDisk = 0;
+
+	std::string arr1[]{ "Яблочный,", "Апельсиновый,","Абрикосовый,","Грушевый" };
+	std::string arr2[]{ "Томатный,", "Луковый,","Огуречный," };
+	std::string arr3[]{ "Чесночный", "Петрушевый" };
+
+
+	while (true)
+	{
+		end = 'y';
+		totalSum = 0;
+		while (end == 'y' || end == 'Y')
+		{
+			categ = cate();
+
+			if (categ == 1)
+			{
+				totalSum += cat1(arr1);
+
+			}
+			else if (categ == 2)
+			{
+				totalSum += cat2(arr2);
+
+			}
+			else if (categ == 3)
+			{
+				totalSum += cat3(arr3);
+			}
+			else
+			{
+				std::cout << "Не корректный ввод!!!" << '\n';
+				continue;
+			}
+
+			std::cout << "Текущая сумма всех покупок: " << totalSum << " руб.\n";
+			std::cout << "Хотите выбрать еще категорию?(y/n) ";
+			std::cin >> end;
+		}
+		if (totalSum > 750)
+		{
+			allDisk = totalSum * 0.13;
+			std::cout << "Скидка 13% на весь чек: -" << allDisk << "руб. \n";
+			totalSum -= allDisk;
+		}
+		std::cout << "Итоговая сумма после всех скидок: " << totalSum << "руб. \n";
+
+		system("pause");
+		system("cls");
+
+
+	}
+	
+}
