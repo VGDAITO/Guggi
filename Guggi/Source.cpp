@@ -197,351 +197,81 @@ int recursiveUmnoj(int a, int b)
 int cate();
 
 double cat1(std::string arr1[]);
-
 double cat2(std::string arr2[]);
 double cat3(std::string arr3[]);
 
+
 void niaM();
 
+void MakeMore(int *num)
+{
+	*num += 2;
+	
+}
+void MakeMore2(int& num)
+{
+	num += 2;
+}
 
+void mass(int size, double *arr)
+{
+	
+
+	for (int i = 0; i < size; i++)
+	{
+		*(arr + i) = 5.6;
+		std::cout << *(arr + i) << " ";
+	}
+}
+
+void MySwap(int &a,int &b)
+{
+	int ptr = a;
+	a = b;
+	b = ptr;
+
+	
+}
+
+void Massiv(int &size, int* &ptr, int num)
+{
+	int* ptr1 = new int[size]{};
+	for (size_t i = 0; i < size; i++)
+	{
+		ptr1[i] = ptr[i];
+	}
+
+	delete[]ptr;
+
+	size += 1;
+	ptr = new int[size];
+
+	for (size_t i = 0; i < size - 1; i++)
+	{
+		ptr[i] = ptr1[i];
+	}
+	ptr[size - 1] = num;
+
+	for (size_t i = 0; i < size; i++)
+	{
+		std::cout << ptr[i] << " ";
+	}
+	delete[]ptr1;
+}
 
 int main()
 {
-	niaM();
+setlocale(LC_ALL, "ru");
 
+int size = 5;
+int* ptr = new int[size] {1, 2, 3, 4, 5};
+int num = 0;
 
+std::cout << "Введите число: ";
+std::cin >> num;
+Massiv(size, ptr, num);
 
-	
-
-	/*std::cout << Sum(4, 5);
-	std::cout << "\n";
-	std::cout << Fak(5);
-	std::cout << "\n";
-
-	std::cout << recursiveDivision(25, 5);
-	std::cout << "\n";
-	std::cout << recursiveUmnoj(3, 5);*/
-
-	/*const int size = 4;
-	int arr1[size]{};
-	char arr2[size]{};
-	bool arr3[size]{};
-
-	setArray(arr1, size);
-	setArray(arr2, size);
-	setArray(arr3, size);
-
-	printMas(arr1,size);
-	printMas(arr2, size);
-	printMas(arr3, size);
-	
-
-	PrintHelloWorld();
-	int a = 100;
-	int number = 100;
-	PrintNumber(a);
-	number = ReturnNumber(number);
-	std::cout << number;*/
-	
-	/*for (int i = 0; i < 5; i++)
-	{
-		std::cout << i;
-	}*/
-
-	/*
-	тип_данных имя_масива[размер_массива];
-	
-	
-	*/
-	/*const int size = 5; // const т.к просто 5 может изменяться, а с const будет статично
-	//int arr[5]{ 1,3,5,6,7 }; //{ 1,3,5,6,7 } - заполняет ячейки , {} - все ячейки даже которые за границы массива будут 0
-	//arr[0] = 10;
-	//arr[1] = 20;
-	std::cout << arr[1] << " " << arr[2] << arr[size - 1]; // size - 1 чтобы обратиться к последней ячейки */
-
-	/*double rub = 0;
-	int cur = 0;
-	double com = 0;
-	char proverka = 'y';
-
-	std::cout << "Конвертер валют - от DAITO\n";
-	std::cout << "Введите кол-во руб: \t"; std::cin >> rub;
-	
-
-	com = rub * 0.05;
-	*/
-
-	/*while (proverka == 'y' || proverka == 'Y')
-	{
-	std::cout << "Какую валюту хотите выбрать: Доллар(1) Евро(2) Юань(3) Фарит(4) Йена(5) "; std::cin >> cur;
-
-
-		if (cur == 1)
-		{
-			double dollar = (rub - com) / 83.65;
-			std::cout << "Вы получите в долларах: " << dollar << "\n";
-		}
-		else if (cur == 2)
-		{
-			double evro = (rub - com) / 1.02;
-			std::cout << "Вы получите в евро: " << evro << "\n";
-		}
-		else if (cur == 3)
-		{
-			double juan = (rub - com) / 8.53;
-			std::cout << "Вы получите в юань: " << juan << "\n";
-		}
-		else if (cur == 4)
-		{
-			double farit = (rub - com) / 34;
-			std::cout << "Вы получите в фаритах: " << farit << "\n";
-		}
-		else if (cur == 5)
-		{
-			double ean = (rub - com) / 177.79;
-			std::cout << "Вы получите в в Йенах: " << ean << "\n";
-		}
-		else
-		{
-			std::cout << "Не верный ввод! \n";
-		}
-		std::cout << "Хотите повторить? y/n "; std::cin >> proverka;
-
-	}*/
-
-	/*for (char proverka = 'y'; proverka == 'y';)
-	{
-		std::cout << "Какую валюту хотите выбрать: Доллар(1) Евро(2) Юань(3) Фарит(4) Йена(5) "; std::cin >> cur;
-
-
-		if (cur == 1)
-		{
-			double dollar = (rub - com) / 83.65;
-			std::cout << "Вы получите в долларах: " << dollar << "\n";
-		}
-		else if (cur == 2)
-		{
-			double evro = (rub - com) / 1.02;
-			std::cout << "Вы получите в евро: " << evro << "\n";
-		}
-		else if (cur == 3)
-		{
-			double juan = (rub - com) / 8.53;
-			std::cout << "Вы получите в юань: " << juan << "\n";
-		}
-		else if (cur == 4)
-		{
-			double farit = (rub - com) / 34;
-			std::cout << "Вы получите в фаритах: " << farit << "\n";
-		}
-		else if (cur == 5)
-		{
-			double ean = (rub - com) / 177.79;
-			std::cout << "Вы получите в в Йенах: " << ean << "\n";
-		}
-		else
-		{
-			std::cout << "Не верный ввод! \n";
-		}
-		std::cout << "Хотите повторить? y/n "; std::cin >> proverka;
-	}*/
-
-	//int a;
-	//int b;
-
-	//a = rand() % 10 ; // до 9 
-	//std::cout << a << "\n";
-	//b = rand() % 10 + 1; // до 10
-	//std::cout << b << "\n";
-
-	/*const int size = 7;
-	int arr[size];
-	int sumPlus = 0;
-	int sumMin = 0;
-	int max = 0;
-
-	for (int i = 0; i < 7; i++)
-	{
-		arr[i] = rand() % 19 - 9;
-		std::cout << arr[i] << " "; 
-		
-	}
-	std::cout << "\n" << "-------------------------------" << "\n";
-	
-	for (int i = 0; i < 7; i++)
-	{
-		if (arr[i] > 0)
-		{
-			std::cout << arr[i] << " ";
-			sumPlus += arr[i];
-		}
-	}
-	std::cout << "\n" << "-------------------------------" << "\n";
-
-	for (int i = 0; i < 7; i++)
-	{
-		if (arr[i] < 0)
-		{
-			std::cout << arr[i] << " ";
-			sumMin += arr[i];
-		}
-	}
-	std::cout << "\n" << "-------------------------------" << "\n";
-	std::cout << "Сумма положительных: " << sumPlus << "\n" << "Сумма отрицательных: " << sumMin;
-	std::cout << "\n" << "-------------------------------" << "\n";*/
-
-	/*const int row = 3, col = 4;
-	int arr[row][col]{};
-	int sum = 0;
-	int sumEnd = 0;
-	for (size_t i = 0; i < row; i++)
-	{
-		sum = 0;
-		for (size_t j = 0; j < col; j++)
-		{
-			arr[i][j] = rand() % 10 ;
-			std::cout << arr[i][j] << ' ' ;
-			sum += arr[i][j];
-
-		}
-		std::cout << "| " << sum  ;
-		std::cout << "\n";
-		
-		
-
-	}
-	std::cout << "------------------\n";
-	for (size_t i = 0; i < col; i++)
-	{
-		sumEnd = 0;
-		for (size_t j = 0; j < row; j++)
-		{
-			sumEnd += arr[j][i];
-		}
-		std::cout << sumEnd << " ";
-		
-	}
-	std::cout << "| ";*/
-
-	/*
-	int a = -5;
-	if (a < 0)
-	{
-
-		std::cout << "hello";
-	}
-	else if (a < 100)
-	{
-		std::cout << "hello";
-	}
-
-	else
-	{
-		std::cout << "Error";
-	}
-
-
-	std::cout << "Введите первое число:\t"; std::cin >> one;
-
-	std::cout << "Введите второе число:\t"; std::cin >> two;
-
-	std::cout << "Введите действие:(+,-,*,/)\t"; std::cin >> action;
-
-	if (action == '+')
-	{
-		std::cout << "Сумма: " << one + two << "\n";
-	}
-	else if (action == '-')
-	{
-		std::cout << "Разность: " << one - two << "\n";
-	}
-	else if (action == '*')
-	{
-		std::cout << "Произведение: " << one * two << "\n";
-	}
-	else if (action == '/')
-	{
-
-		if (two > 0)
-		{
-			std::cout << "Частное: " << one / two << "\n";
-		}
-		else
-		{
-			std::cout << "Субо братик нельзя делить на 0";
-		}
-	}
-	else
-	{
-		std::cout << "неккоректный ввод";
-	}
-	*/
-
-/*ReturnCal();
-*/
-
-/*const int size = 6;
-int arr1[size];
-int arr2[size];
-int temp = 0;
-
-
-setArray1(arr1, size);
-setArray2(arr2, size);
-PrintArray1(arr1, size);
-PrintArray2(arr2, size);
-
-SwitchArray(arr1, arr2, size);
-
-std::cout << "\n";
-PrintArray1(arr1, size);
-PrintArray2(arr2, size);
-
-	return 0;
-}
-void setArray1(int array[], int size)
-{
-	for (size_t i = 0; i < size; i++)
-	{
-		array[i] = rand() % 10;
-	}
-}
-void setArray2(int array[], int size)
-{
-	for (size_t i = 0; i < size; i++)
-	{
-		array[i] = rand() % 10;
-	}
-}
-void PrintArray1(int array[], int size)
-{
-	for (size_t i = 0; i < size; i++)
-	{
-		std::cout << array[i] << " ";
-	}
-
-	std::cout << "\n";
-
-}
-void PrintArray2(int array[], int size)
-{
-	for (size_t i = 0; i < size; i++)
-	{
-		std::cout << array[i] << " ";
-	}
-	std::cout << "\n";
-
-}
-
-void SwitchArray(int array1[], int array2[], int size)
-{
-	for (size_t i = 0; i < size; i++)
-	{
-		int temp = array1[i];
-		array1[i] = array2[i];
-		array2[i] = temp;
-	}
-	*/
+delete []ptr;
 return 0;
 }
 /*
@@ -609,6 +339,7 @@ int cate()
 }
 double cat1(std::string arr1[])
 {
+	system("cls");
 	int sok;
 	double korz = 0;
 	char vse = 'n';
@@ -619,7 +350,7 @@ double cat1(std::string arr1[])
 	std::cout << "\n";
 	while (vse == 'n' || vse == 'N')
 	{
-		std::cout << "Какой хочешь брад: (1-|140|,2-|270|,3-|140|,4-|180|) ";
+		std::cout << "Какой хочешь брад: (1-|140|,2-|270|,3-|140|,4-|180|, Иначе - |Выйти|) ";
 		std::cin >> sok;
 		if (sok == 1)
 		{
@@ -644,7 +375,7 @@ double cat1(std::string arr1[])
 		else
 		{
 			std::cout << "Некорректный ввод!!!!!!! " << "\n";
-			continue;
+			break;
 		}
 		std::cout << "Все? (y,n) ";
 		std::cin >> vse;
@@ -654,6 +385,7 @@ double cat1(std::string arr1[])
 }
 double cat2(std::string arr2[])
 {
+	system("cls");
 	int sok;
 	double korz = 0;
 	char vse = 'n';
@@ -667,7 +399,7 @@ double cat2(std::string arr2[])
 	std::cout << "\n";
 	while (vse == 'n' || vse == 'N')
 	{
-		std::cout << "Какой хочешь брад: (1-|140|,2-|200|,3-|255|) ";
+		std::cout << "Какой хочешь брад: (1-|140|,2-|200|,3-|255| Иначе - |Выйти|) ";
 		std::cin >> sok;
 		if (sok == 1)
 		{
@@ -695,7 +427,7 @@ double cat2(std::string arr2[])
 		else
 		{
 			std::cout << "Некорректный ввод!!!!!!! " << "\n";
-			continue;
+			break;
 		}
 		std::cout << "Все? (y,n) ";
 		std::cin >> vse;
@@ -705,6 +437,7 @@ double cat2(std::string arr2[])
 }
 double cat3(std::string arr3[])
 {
+	system("cls");
 	int sok;
 	double korz = 0;
 	char vse = 'n';
@@ -715,9 +448,10 @@ double cat3(std::string arr3[])
 	{
 		std::cout << arr3[i] << " ";
 	}
+	std::cout << "\n";
 	while (vse == 'n' || vse == 'N')
 	{
-		std::cout << "Какой хочешь брад: (1-|190|,2-|230|) ";
+		std::cout << "Какой хочешь брад: (1-|190|,2-|230|), Иначе - |Выйти| ";
 		std::cin >> sok;
 		if (sok == 1)
 		{
@@ -742,7 +476,7 @@ double cat3(std::string arr3[])
 		else
 		{
 			std::cout << "Некорректный ввод!!!!!!! " << "\n";
-			continue;
+			break;
 		}
 		std::cout << "Все? (y,n): ";
 		std::cin >> vse;
@@ -813,3 +547,383 @@ void niaM()
 	}
 	
 }
+
+//niaM();
+/*int a = 5;
+
+
+int* ptr = &a;
+int b = 100;
+*ptr = b;
+ptr = &b;
+
+
+std::cout << a << " переменная a\n";
+std::cout << &a << " адрес a\n";
+std::cout << ptr << " переменная ptr\n";
+std::cout << &ptr << " адрес ptr\n";
+std::cout << *ptr << " значение по адресу \n";
+
+int* ptr = &a;
+MakeMore(ptr);
+std::cout << a << "\n";*/
+
+/*int a = 10, b = 20;
+std::cout << a << " " << b << "\n";
+MySwap(a, b);
+
+std::cout << a << " " << b << "\n";
+
+MakeMore2(a);*/
+/*const int size = 5;
+double arr[size];
+
+mass(size, arr);*/
+
+/*std::cout << Sum(4, 5);
+std::cout << "\n";
+std::cout << Fak(5);
+std::cout << "\n";
+
+std::cout << recursiveDivision(25, 5);
+std::cout << "\n";
+std::cout << recursiveUmnoj(3, 5);*/
+
+/*const int size = 4;
+int arr1[size]{};
+char arr2[size]{};
+bool arr3[size]{};
+
+setArray(arr1, size);
+setArray(arr2, size);
+setArray(arr3, size);
+
+printMas(arr1,size);
+printMas(arr2, size);
+printMas(arr3, size);
+
+
+PrintHelloWorld();
+int a = 100;
+int number = 100;
+PrintNumber(a);
+number = ReturnNumber(number);
+std::cout << number;*/
+
+/*for (int i = 0; i < 5; i++)
+{
+	std::cout << i;
+}*/
+
+/*
+тип_данных имя_масива[размер_массива];
+
+
+*/
+/*const int size = 5; // const т.к просто 5 может изменяться, а с const будет статично
+//int arr[5]{ 1,3,5,6,7 }; //{ 1,3,5,6,7 } - заполняет ячейки , {} - все ячейки даже которые за границы массива будут 0
+//arr[0] = 10;
+//arr[1] = 20;
+std::cout << arr[1] << " " << arr[2] << arr[size - 1]; // size - 1 чтобы обратиться к последней ячейки */
+
+/*double rub = 0;
+int cur = 0;
+double com = 0;
+char proverka = 'y';
+
+std::cout << "Конвертер валют - от DAITO\n";
+std::cout << "Введите кол-во руб: \t"; std::cin >> rub;
+
+
+com = rub * 0.05;
+*/
+
+/*while (proverka == 'y' || proverka == 'Y')
+{
+std::cout << "Какую валюту хотите выбрать: Доллар(1) Евро(2) Юань(3) Фарит(4) Йена(5) "; std::cin >> cur;
+
+
+	if (cur == 1)
+	{
+		double dollar = (rub - com) / 83.65;
+		std::cout << "Вы получите в долларах: " << dollar << "\n";
+	}
+	else if (cur == 2)
+	{
+		double evro = (rub - com) / 1.02;
+		std::cout << "Вы получите в евро: " << evro << "\n";
+	}
+	else if (cur == 3)
+	{
+		double juan = (rub - com) / 8.53;
+		std::cout << "Вы получите в юань: " << juan << "\n";
+	}
+	else if (cur == 4)
+	{
+		double farit = (rub - com) / 34;
+		std::cout << "Вы получите в фаритах: " << farit << "\n";
+	}
+	else if (cur == 5)
+	{
+		double ean = (rub - com) / 177.79;
+		std::cout << "Вы получите в в Йенах: " << ean << "\n";
+	}
+	else
+	{
+		std::cout << "Не верный ввод! \n";
+	}
+	std::cout << "Хотите повторить? y/n "; std::cin >> proverka;
+
+}*/
+
+/*for (char proverka = 'y'; proverka == 'y';)
+{
+	std::cout << "Какую валюту хотите выбрать: Доллар(1) Евро(2) Юань(3) Фарит(4) Йена(5) "; std::cin >> cur;
+
+
+	if (cur == 1)
+	{
+		double dollar = (rub - com) / 83.65;
+		std::cout << "Вы получите в долларах: " << dollar << "\n";
+	}
+	else if (cur == 2)
+	{
+		double evro = (rub - com) / 1.02;
+		std::cout << "Вы получите в евро: " << evro << "\n";
+	}
+	else if (cur == 3)
+	{
+		double juan = (rub - com) / 8.53;
+		std::cout << "Вы получите в юань: " << juan << "\n";
+	}
+	else if (cur == 4)
+	{
+		double farit = (rub - com) / 34;
+		std::cout << "Вы получите в фаритах: " << farit << "\n";
+	}
+	else if (cur == 5)
+	{
+		double ean = (rub - com) / 177.79;
+		std::cout << "Вы получите в в Йенах: " << ean << "\n";
+	}
+	else
+	{
+		std::cout << "Не верный ввод! \n";
+	}
+	std::cout << "Хотите повторить? y/n "; std::cin >> proverka;
+}*/
+
+//int a;
+//int b;
+
+//a = rand() % 10 ; // до 9 
+//std::cout << a << "\n";
+//b = rand() % 10 + 1; // до 10
+//std::cout << b << "\n";
+
+/*const int size = 7;
+int arr[size];
+int sumPlus = 0;
+int sumMin = 0;
+int max = 0;
+
+for (int i = 0; i < 7; i++)
+{
+	arr[i] = rand() % 19 - 9;
+	std::cout << arr[i] << " ";
+
+}
+std::cout << "\n" << "-------------------------------" << "\n";
+
+for (int i = 0; i < 7; i++)
+{
+	if (arr[i] > 0)
+	{
+		std::cout << arr[i] << " ";
+		sumPlus += arr[i];
+	}
+}
+std::cout << "\n" << "-------------------------------" << "\n";
+
+for (int i = 0; i < 7; i++)
+{
+	if (arr[i] < 0)
+	{
+		std::cout << arr[i] << " ";
+		sumMin += arr[i];
+	}
+}
+std::cout << "\n" << "-------------------------------" << "\n";
+std::cout << "Сумма положительных: " << sumPlus << "\n" << "Сумма отрицательных: " << sumMin;
+std::cout << "\n" << "-------------------------------" << "\n";*/
+
+/*const int row = 3, col = 4;
+int arr[row][col]{};
+int sum = 0;
+int sumEnd = 0;
+for (size_t i = 0; i < row; i++)
+{
+	sum = 0;
+	for (size_t j = 0; j < col; j++)
+	{
+		arr[i][j] = rand() % 10 ;
+		std::cout << arr[i][j] << ' ' ;
+		sum += arr[i][j];
+
+	}
+	std::cout << "| " << sum  ;
+	std::cout << "\n";
+
+
+
+}
+std::cout << "------------------\n";
+for (size_t i = 0; i < col; i++)
+{
+	sumEnd = 0;
+	for (size_t j = 0; j < row; j++)
+	{
+		sumEnd += arr[j][i];
+	}
+	std::cout << sumEnd << " ";
+
+}
+std::cout << "| ";*/
+
+/*
+int a = -5;
+if (a < 0)
+{
+
+	std::cout << "hello";
+}
+else if (a < 100)
+{
+	std::cout << "hello";
+}
+
+else
+{
+	std::cout << "Error";
+}
+
+
+std::cout << "Введите первое число:\t"; std::cin >> one;
+
+std::cout << "Введите второе число:\t"; std::cin >> two;
+
+std::cout << "Введите действие:(+,-,*,/)\t"; std::cin >> action;
+
+if (action == '+')
+{
+	std::cout << "Сумма: " << one + two << "\n";
+}
+else if (action == '-')
+{
+	std::cout << "Разность: " << one - two << "\n";
+}
+else if (action == '*')
+{
+	std::cout << "Произведение: " << one * two << "\n";
+}
+else if (action == '/')
+{
+
+	if (two > 0)
+	{
+		std::cout << "Частное: " << one / two << "\n";
+	}
+	else
+	{
+		std::cout << "Субо братик нельзя делить на 0";
+	}
+}
+else
+{
+	std::cout << "неккоректный ввод";
+}
+*/
+
+/*ReturnCal();
+*/
+
+/*const int size = 6;
+int arr1[size];
+int arr2[size];
+int temp = 0;
+
+
+setArray1(arr1, size);
+setArray2(arr2, size);
+PrintArray1(arr1, size);
+PrintArray2(arr2, size);
+
+SwitchArray(arr1, arr2, size);
+
+std::cout << "\n";
+PrintArray1(arr1, size);
+PrintArray2(arr2, size);
+
+	return 0;
+}
+void setArray1(int array[], int size)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		array[i] = rand() % 10;
+	}
+}
+void setArray2(int array[], int size)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		array[i] = rand() % 10;
+	}
+}
+void PrintArray1(int array[], int size)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		std::cout << array[i] << " ";
+	}
+
+	std::cout << "\n";
+
+}
+void PrintArray2(int array[], int size)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		std::cout << array[i] << " ";
+	}
+	std::cout << "\n";
+
+}
+
+void SwitchArray(int array1[], int array2[], int size)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		int temp = array1[i];
+		array1[i] = array2[i];
+		array2[i] = temp;
+	}
+	*/
+
+	/* 10;
+
+	int* ptr = new int;
+
+	*ptr = 1000;
+	std::cout << *ptr << "\n";
+	delete ptr;
+
+	ptr = &a;
+
+	int size = 0;
+	std::cin >> size;
+	ptr = new int[size];
+
+	ptr[0] = 12;
+
+	delete[]ptr;*/
