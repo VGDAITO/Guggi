@@ -1,6 +1,12 @@
 #include <iostream>
+#include <windows.h>
+#include <string>
 
+#include <limits>
 
+#ifdef max
+#undef max
+#endif // max
 /*
 тип_данных »м€ функции(аргументы_функции)
 {
@@ -194,7 +200,7 @@ int recursiveUmnoj(int a, int b)
 
 
 
-int cate();
+/*int cate();
 
 double cat1(std::string arr1[]);
 double cat2(std::string arr2[]);
@@ -258,12 +264,76 @@ void Massiv(int &size, int* &ptr, int num)
 	}
 	delete[]ptr1;
 }
-
+*/
 int main()
 {
-setlocale(LC_ALL, "ru");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 
-int size = 5;
+/*int row = 3, col = 4, size = 2;
+
+int*** arr = new int** [size];
+
+for (size_t i = 0; i < size; i++)
+{
+	arr[i] = new int* [row];
+	for (size_t j = 0; j < row; j++)
+	{
+		arr[i][j] = new int[col];
+	}
+}
+
+arr[1][2][0] = 100;
+
+for (size_t i = 0; i < size; i++)
+{
+	for (size_t j = 0; j < row; j++)
+	{
+		delete[]arr[i][j];
+	}
+	delete[] arr[i];
+}
+delete[]arr;*/
+
+/*const char name[12] = "Hello world";
+std::cout << name;*/
+	int a;
+
+	std::string name;
+
+	std::getline(std::cin, name, '\n');
+
+	std::cout << name;
+
+	std::cin >> a;
+	std::cout << a << "\n";
+
+	//std::cin.ignore(32000, '\n');
+	//std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+	std::getline(std::cin, name, '\n');
+
+	std::cout << name << '\n';
+	return 0;
+}
+
+/*int** arr = new int* [row];
+
+for (size_t i = 0; i < row; i++)
+{
+	arr[i] = new int[col];
+}
+
+arr[0][2] = 123;
+
+for (size_t i = 0; i < row; i++)
+{
+	delete[]arr[i];
+}
+
+delete[]arr;*/
+
+/*int size = 5;
 int* ptr = new int[size] {1, 2, 3, 4, 5};
 int num = 0;
 
@@ -271,9 +341,8 @@ std::cout << "¬ведите число: ";
 std::cin >> num;
 Massiv(size, ptr, num);
 
-delete []ptr;
-return 0;
-}
+delete []ptr; */
+
 /*
 void setArray(int array[], int size)
 {
@@ -331,7 +400,7 @@ void printMas(bool arr3[], int size)
 	std::cout << "\n";
 }
 */
-int cate()
+/*int cate()
 {
 	int categ;
 	std::cout << "¬ведите категорию: (1.‘руктовый, 2. ќвощной, 3. „аи.) "; std::cin >> categ;
@@ -548,7 +617,7 @@ void niaM()
 	
 }
 
-//niaM();
+niaM();*/
 /*int a = 5;
 
 
