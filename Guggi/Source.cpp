@@ -265,6 +265,29 @@ void Massiv(int &size, int* &ptr, int num)
 	delete[]ptr1;
 }
 */
+void reg(std::string password, std::string login)
+{
+	std::cout << "–егистраци€\n";
+	std::cout << "¬ведите логин: ";
+	std::getline(std::cin, login, '\n');
+
+	while (true)
+	{
+		std::cout << "¬ведите логин: ";
+		std::getline(std::cin, login, '\n');
+		if (login > 2 && login < 16)
+	}
+	std::cout << "¬ведите пароль: ";
+	std::getline(std::cin, password, '\n');
+	while (password.size() > 2 && password.size() < 16)
+	{
+		std::cout << "¬ведите логин: ";
+		std::getline(std::cin, login, '\n');
+
+	}
+}
+
+
 int main()
 {
 	SetConsoleCP(1251);
@@ -297,7 +320,15 @@ delete[]arr;*/
 
 /*const char name[12] = "Hello world";
 std::cout << name;*/
-	int a;
+
+	
+	
+	std::string password;
+	std::string login;
+
+	reg(login, password);
+
+	/*int a;
 
 	std::string name;
 
@@ -313,7 +344,7 @@ std::cout << name;*/
 
 	std::getline(std::cin, name, '\n');
 
-	std::cout << name << '\n';
+	std::cout << name << '\n';*/
 	return 0;
 }
 
